@@ -1,0 +1,30 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "nsdgenzone"
+version = "0.1.0"
+description = ""
+authors = ["Takashi Takizawa <taki@cyber.email.ne.jp>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+include = ["nsdgenzone.py"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.scripts]
+nsdgenzone = "nsdgenzone:main"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line-length = 88
+trailing-comma = true
+multi-line-output = 3
+
+[tool.pylint]
+max-line-length = 88
