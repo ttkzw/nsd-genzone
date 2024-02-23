@@ -26,7 +26,7 @@ def generate_zonefile(
     lines.append(f"$TTL {DEFAULT_TTL}")
     lines.append(
         f"{zonename} IN SOA ns.{zonename} hostmaster.{zonename} "
-        "2023100702 3600 900 604800 {SOA_MINIMUM}"
+        f"2023100702 3600 900 604800 {SOA_MINIMUM}"
     )
     lines.append(f"@  IN NS ns.{zonename}")
     lines.append(f"ns IN A {ipaddress}")
