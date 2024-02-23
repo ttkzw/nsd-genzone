@@ -5,8 +5,9 @@ This is a project to generate test zones for NSD.
 ## Usage
 
 ```
-usage: nsdgenzone [-h] --zones ZONES --hosts HOSTS --domainname DOMAINNAME --ipaddress IPADDRESS --configdir CONFIGDIR --zonesdir
-                     ZONESDIR
+usage: nsdgenzone [-h] --zones ZONES --hosts HOSTS --domainname DOMAINNAME 
+                  --ipaddress IPADDRESS --configdir CONFIGDIR --zonesdir
+                  ZONESDIR
 
 options:
   -h, --help            show this help message and exit
@@ -24,6 +25,8 @@ options:
 For example,
 
 ```
-nsd-genzone --zones 1000000 --hosts 100 --domainname test. --ipaddress 192.0.2.53 --configdir /etc/nsd/nsd.conf.d --zonesdir /etc/nsd/zones 
+nsdgenzone --zones 1000000 --hosts 10 --domainname test. \
+    --ipaddress 192.0.2.53 --configdir /etc/nsd/nsd.conf.d \
+    --zonesdir /etc/nsd/zones 
 ```
 
