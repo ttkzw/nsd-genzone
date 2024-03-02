@@ -30,7 +30,7 @@ def generate_zonefile(zonefile: Path, zonename: str, ipaddress: str) -> None:
     lines.append(f'@   IN  TXT   "v=spf1 ip4:{ipaddress} -all"')
     lines.append(f"@   IN  A     {ipaddress}")
     lines.append(f"www IN  CNAME {zonename}")
-    lines.append(f"@   IN  MX    mx.{zonename}")
+    lines.append(f"@   IN  MX    10 mx.{zonename}")
     lines.append(f"mx  IN  A     {ipaddress}")
     lines.append("")
     zonefile.write_text("\n".join(lines))

@@ -31,3 +31,40 @@ nsdgenzone --zones 1000000 --domainname test. --ipaddress 192.0.2.53 \
     --queryfile querydata.txt
 ```
 
+## TIPS
+
+### systemd
+
+If NSD startup times out in systemd, increase the TimeoutStartSec value as follows:
+
+```
+$ sudo systemctl edit nsd.service 
+```
+
+```
+[Service]
+TimeoutStartSec=600
+```
+
+### NSD
+
+/etc/nsd/nsd.conf.d/server.conf
+
+```
+server:
+        interface: 192.0.2.53
+        port: 53
+```
+
+### Unbound
+
+/etc/unbound/unbound.conf.d/test.conf
+
+```
+server:
+        local-zone: test. nodefault
+
+stub-zone:
+        name: test.
+        stub-addr: 192.0.2.53@53
+```
